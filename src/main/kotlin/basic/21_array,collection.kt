@@ -62,7 +62,7 @@ fun main() {
         println(key)
         println(oldMap[key])
     }
-    for((key, value) in oldMap.entries) {
+    for((key, value) in oldMap.entries) {   /** (key, value) in type.entries 는 구조분해 사용한 문법 */
         println(key)
         println(value)
     }
