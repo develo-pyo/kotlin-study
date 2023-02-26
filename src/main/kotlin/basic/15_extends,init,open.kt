@@ -7,8 +7,8 @@ open class Base (
     open val number: Int = 100
 ) {
     init {
-        println("Base init")
-        println(number)     /** 여기서 number는 필드가 아닌 getter 호출을 통해 가져오는 값 */
+        println("Base init")    /** 1. */
+        println(number)    /** 2. overrided number getter 호출 */ /** 여기서 number는 필드가 아닌 getter 호출을 통해 가져오는 값 */
     }
 }
 
@@ -16,12 +16,12 @@ class Derived(
     number: Int
 ) : Base(number) {
     init {
-        println("Derived init")
-        println(number)
+        println("Derived init") /** 4. */
+        println(number) /** 5. */
     }
     override val number: Int = number
         get() {
-            println("Derived getter")
+            println("Derived getter")   /** 3. */
             return field        // field 는 필드(멤버변수)를 의미 (getter가 아님) == backing field 라 부름
         }
 }
